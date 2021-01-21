@@ -49,7 +49,7 @@ const DashBoard = () => {
             height='auto'
             src={mainPhoto}
           />
-          <h4 style={{ textAlign: 'center', marginBottom: 25, fontSize: 25 }}>
+          <h4 style={{ textAlign: 'center', marginBottom: 25, fontSize: 25, fontWeight:700 }}>
             Получи бесплатную консультацию профессионального косметолога перед покупкой продукции
           </h4>
           <div style={{ display: 'flex', justifyContent: 'space-around' }}>
