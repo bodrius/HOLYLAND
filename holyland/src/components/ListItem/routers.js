@@ -15,10 +15,6 @@ export const routers = [
       component: About,
     },
     {
-      path: '/contact',
-      component: Contact,
-    },
-    {
       path: '/howorder',
       component: HowOrder,
     },

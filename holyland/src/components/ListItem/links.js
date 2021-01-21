@@ -35,10 +35,4 @@ export const links = [
     component: Price,
     icon: MonetizationOnOutlinedIcon,
   },
-  {
-    name: 'Контакты',
-    path: '/contact',
-    component: Contact,
-    icon: ContactPhoneOutlinedIcon,
-  },
 ];
