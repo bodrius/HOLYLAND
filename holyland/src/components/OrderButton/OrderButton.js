@@ -8,6 +8,7 @@ import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import { useValidate } from '../../helpers/validate';
+import useWindowDimension from '../../hooks/useWindowDimension';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -19,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: '#fff',
     borderRadius: 3,
-    width: '97%',
   },
 }));
 
@@ -28,6 +28,7 @@ export function OrderButton() {
   const validate = useValidate();
   const [open, setOpen] = useState(false);
   const [validation, setValidation] = useState({});
+  const { width, height } = useWindowDimension();
 
   const handleToggleModal = () => {
     setOpen(true);
@@ -69,7 +70,14 @@ export function OrderButton() {
     <div>
       <Button
         onClick={handleToggleModal}
-        style={{ backgroundColor: '#000', color: '#fff', textAlign: 'center' }}
+        style={{
+          backgroundColor: '#000',
+          color: '#fff',
+          textAlign: 'center',
+          marginBottom: 30,
+          fontSize: height > 666 ? (height >= 1024 ? 20 : 13) : 10,
+          fontWeight: 'bold',
+        }}
         endIcon={<ShoppingCartOutlinedIcon />}>
         Заказать
       </Button>
@@ -85,9 +93,16 @@ export function OrderButton() {
           timeout: 700,
         }}>
         <Fade in={open}>
-          <div className={classes.paper}>
+          <div
+            className={classes.paper}
+            style={{ width: width >= 768 ? (width >= 1024 ? '30%' : '70%') : '97%' }}>
             <h2
-              style={{ fontSize: 17, textAlign: 'center', marginBottom: 20, marginTop: 20 }}
+              style={{
+                fontSize: 17,
+                textAlign: 'center',
+                marginBottom: 20,
+                marginTop: width >= 768 ? 50 : 20,
+              }}
               id='transition-modal-title'>
               ОФОРМЛЕНИЕ ЗАКАЗА
             </h2>
@@ -127,7 +142,7 @@ export function OrderButton() {
                   id='outlined-multiline-static'
                   multiline
                   rows={7}
-                  defaultValue='узнать у малышки'
+                  defaultValue='Название/код продукта:'
                   variant='outlined'
                   style={{ marginBottom: 25 }}
                   required
@@ -142,7 +157,7 @@ export function OrderButton() {
                     backgroundColor: '#000',
                     color: '#fff',
                     textAlign: 'center',
-                    marginBottom: 30,
+                    marginBottom: width >= 768 ? 50 : 30,
                     padding: 10,
                     paddingLeft: 30,
                     paddingRight: 30,

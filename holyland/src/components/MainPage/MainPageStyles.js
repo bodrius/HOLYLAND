@@ -1,16 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const drawerWidth = 240;
 
-export  const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    fontFamily: 'Fira Sans'
+    fontFamily: 'Fira Sans',
   },
   toolbar: {
     paddingRight: 24,
-    fontFamily: 'Fira Sans' // keep right padding when drawer closed
+    fontFamily: 'Fira Sans', // keep right padding when drawer closed
   },
   toolbarIcon: {
     display: 'flex',
@@ -20,8 +19,8 @@ export  const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
-    color: "#000",
-    backgroundColor:"#fff",
+    color: '#000',
+    backgroundColor: '#fff',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -44,7 +43,7 @@ export  const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    fontFamily: 'Fira Sans'
+    fontFamily: 'Fira Sans',
   },
   drawerPaper: {
     position: 'relative',
@@ -74,7 +73,6 @@ export  const useStyles = makeStyles((theme) => ({
   },
   container: {
     paddingTop: theme.spacing(2),
-    // paddingBottom: theme.spacing(4),
   },
   paper: {
     padding: theme.spacing(2),

@@ -42,9 +42,22 @@ export const useValidate = () => {
     return errors;
   };
 
+  const validatePhone = (phone) => {
+    const errors = {};
+    if (phone === '') {
+      errors.phone = 'Введите телефон';
+    } else if (isNaN(phone)) {
+      errors.phone = 'Введите только цифры';
+    } else {
+      delete errors.phone;
+    }
+    return errors;
+  };
+
   return {
     validateEmail,
     validatePassword,
     validateOrder,
+    validatePhone,
   };
 };
