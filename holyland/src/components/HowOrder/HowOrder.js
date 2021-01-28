@@ -11,7 +11,7 @@ const HowOrder = () => {
       {width >= 1024 ? (
         <section style={{backgroundColor:'fff'}}>
           <div style={{ fontSize: 14 }}>
-            <h3 style={{ marginBottom: 10 }}>Информация о доставке и оплате</h3>
+            <h2 style={{ marginBottom: 10 }}>Информация о доставке и оплате</h2>
             <p>Доставку заказов мы осуществляем по всей территории Украины.</p>
             <div style={{ marginBottom: 10 }}>
               <p>
